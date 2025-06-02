@@ -41,6 +41,11 @@ void			append_node(t_stack_node **stack, t_stack_node *new_node);
 bool			check_limits_and_duplicates(t_stack_node *stack_a, char *arg);
 bool			process_arg(t_stack_node **stack_a, char *arg);
 bool			init_stack_a(t_stack_node **stack_a, int argc, char **argv);
+void			current_index(t_stack_node *stack);
+t_stack_node	*get_cheapest(t_stack_node *stack);
+void			prep_for_push(t_stack_node **s, t_stack_node *n, char c);
+void			init_nodes_a(t_stack_node *a, t_stack_node *b);
+void			init_nodes_b(t_stack_node *a, t_stack_node *b);
 
 /* OPÉRATIONS DE BASE */
 void			sa(t_stack_node **stack_a, bool print);
@@ -54,6 +59,7 @@ void			rr(t_stack_node **stack_a, t_stack_node **stack_b, bool print);
 void			rra(t_stack_node **stack_a, bool print);
 void			rrb(t_stack_node **stack_b, bool print);
 void			rrr(t_stack_node **stack_a, t_stack_node **stack_b, bool print);
+
 
 /* ALGORITHME */
 void			set_index(t_stack_node *stack);
@@ -72,5 +78,7 @@ bool			is_sorted(t_stack_node *stack);
 t_stack_node	*find_min(t_stack_node *stack);
 t_stack_node	*find_max(t_stack_node *stack);
 void			free_stack(t_stack_node **stack);
+int				stack_len(t_stack_node *stack)
+bool			stack_sorted(t_stack_node *stack);
 
 #endif
